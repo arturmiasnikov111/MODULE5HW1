@@ -261,7 +261,6 @@ namespace MODULE5HW1.Requests
         {
             using (var httpClient = new HttpClient())
             {
-
                 var httpMessage = new HttpRequestMessage();
                 httpMessage.Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
                 httpMessage.RequestUri = new Uri(requestedUri);
