@@ -199,7 +199,6 @@ namespace MODULE5HW1.Requests
             {
                 var httpMessage = new HttpRequestMessage();
                 httpMessage.RequestUri = new Uri(@"https://reqres.in/api/users/2");
-                httpMessage.Method = HttpMethod.Patch;
 
                 var result = await httpClient.DeleteAsync(httpMessage.RequestUri);
 
