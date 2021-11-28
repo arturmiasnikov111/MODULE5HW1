@@ -116,11 +116,8 @@ namespace MODULE5HW1.Requests
                     Job = "leader"
                 };
 
-                var httpContent =
-                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-
                 var httpMessage = new HttpRequestMessage();
-                httpMessage.Content = httpContent;
+                httpMessage.Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
                 httpMessage.RequestUri = new Uri(@"https://reqres.in/api/users");
 
                 var result = await httpClient.PostAsync(httpMessage.RequestUri, httpMessage.Content);
@@ -145,11 +142,8 @@ namespace MODULE5HW1.Requests
                     Job = "zion president"
                 };
 
-                var httpContent =
-                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-
                 var httpMessage = new HttpRequestMessage();
-                httpMessage.Content = httpContent;
+                httpMessage.Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
                 httpMessage.RequestUri = new Uri(@"https://reqres.in/api/users/2");
 
                 var result = await httpClient.PutAsync(httpMessage.RequestUri, httpMessage.Content);
@@ -174,11 +168,8 @@ namespace MODULE5HW1.Requests
                     Job = "zion president"
                 };
 
-                var httpContent =
-                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
-
                 var httpMessage = new HttpRequestMessage();
-                httpMessage.Content = httpContent;
+                httpMessage.Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
                 httpMessage.RequestUri = new Uri(@"https://reqres.in/api/users/2");
 
                 var result = await httpClient.PatchAsync(httpMessage.RequestUri, httpMessage.Content);
@@ -270,11 +261,9 @@ namespace MODULE5HW1.Requests
         {
             using (var httpClient = new HttpClient())
             {
-                var httpContent =
-                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
 
                 var httpMessage = new HttpRequestMessage();
-                httpMessage.Content = httpContent;
+                httpMessage.Content = new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json");
                 httpMessage.RequestUri = new Uri(requestedUri);
 
                 var result = await httpClient.PostAsync(httpMessage.RequestUri, httpMessage.Content);
